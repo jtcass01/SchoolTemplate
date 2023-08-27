@@ -8,4 +8,6 @@ public:
     ~Example();
 };
 
+int ExampleFunction(int a, int b);
+
 #endif // __TEMPLATE_HPP__
