@@ -1,0 +1,39 @@
+\title{Exercise Title: An Exercise Template}
+
+\author{Jacob Taylor Cassady}
+\documentclass{article}
+\usepackage{textcomp}
+\usepackage{textgreek}
+\usepackage{bbding, pifont}
+\usepackage{bbold}
+\usepackage{dsfont}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\graphicspath{ {.} }
+
+\begin{document}
+
+\maketitle
+
+\section{Exercise 0}
+Hello world.
+
+\subsection{Exercise 0.0}
+Example Equation - Taken from ``Reinforcement Learning'' by Sutton and Barto:
+
+%  EXAMPLE EQUATIONS
+$$ Q_t(a) \doteq \frac{\text{sum of rewards when \emph{a} taken prior to \emph{t}}}{\text{number of times \emph{a} taken prior to \emph{t}}} = \frac{\sum_{i=1}^{t-1} R_i \cdotp \mathbb{1}_{A_i=a}}{\sum_{i=1}^{t-1}\mathbb{1}_{A_i=a}} \thickspace \thickspace \thickspace \text{(2.1)} $$
+where $ \mathbb{1}_{predicate} $ denotes the random variable that is 1 if \emph{predicate} is true and 0 if it is not.
+If the denominator is zero, then we instead define $ Q_t(a) $ as some default value, such as
+0. As the denominator goes to infinity, by the law of large numbers, $ Q_t(a) $ converges to
+$ q_*(a) $. We call this the \emph{sample-average} method for estimating action values because each
+estimate is an average of the sample of relevant rewards.
+
+%  EXAMPLE GRAPHIC
+% \begin{figure}[b]
+%     \centering
+%     \includegraphics{bandit_example_output.png}    
+%     \caption{Output of bandit\_example.py}
+% \end{figure}
+
+\end{document}
