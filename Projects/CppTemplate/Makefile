@@ -29,16 +29,14 @@ all: $(TARGET)
 # Generates the target executable
 $(TARGET):$(OBJS)
 	$(CXX) -o $(TARGET) $(OBJS) $(LIBS)
-	$(CXX) -o $(TEST_TARGET) $(TEST_OBJS) $(LIBS) $(GTEST)
-
-$(OBJDIR)/%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 unit_test: $(TEST_TARGET)
-	./$(TEST_TARGET)
+
+$(TEST_TARGET):$(TEST_OBJS)
+	$(CXX) -o $(TEST_TARGET) $(TEST_OBJS) $(LIBS) $(GTEST)
 
 # Removes object files and target
 clean:
 	rm -f $(OBJS) $(TARG) *~
-	rm unit_test
-	rm solution
+	rm -f unit_test *~
+	rm -f solution  *~
