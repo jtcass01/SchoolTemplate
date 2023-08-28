@@ -22,8 +22,6 @@ TEST_OBJS = $(TEST_SRCS:.cpp=.o)
 TARGET = solution
 TEST_TARGET = unit_test
 
-OBJDIR = build
-
 all: $(TARGET)
 
 # Generates the target executable
